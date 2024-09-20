@@ -1,3 +1,22 @@
 .logoHeader {
-    height: 40px;
+  height: 40px;
+}
+
+header {
+  & nav {
+    background-color: rgb(238, 173, 52);
+  }
+}
+
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link.active {
+  text-decoration: underline white;
+  color: white !important;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
 }
