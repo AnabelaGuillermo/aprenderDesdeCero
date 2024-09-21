@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useState } from "react";
+import AlphabetButton from "../components/AlphabetView/Alphabet";
 
-const AlphabetView = () => {
+import '../css/AlphabetView.css'
+
+const alphabet = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("");
+
+function Alphabet() {
+  const [word, setWord] = useState("");
+
+  const handleAddLetter = (letter) => {
+    setWord((prevWord) => prevWord + letter);
+  };
+
   return (
-    <div>AlphabetView</div>
-  )
+    <section className="container Alphabet">
+      <h1 className="abecedario">Abecedario</h1>
+      <article className="alphabet-buttons">
+        {alphabet.map((letter) => (
+          <AlphabetButton
+            key={letter}
+            letter={letter}
+            onAddLetter={handleAddLetter}
+          />
+        ))}
+      </article>
+    </section>
+  );
 }
 
-export default AlphabetView
+export default Alphabet;

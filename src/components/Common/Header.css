@@ -1,5 +1,5 @@
 .logoHeader {
-  height: 50px;
+  height: 60px;
 }
 
 header {
@@ -18,8 +18,4 @@ header {
 .navbar-nav .nav-link.active {
   text-decoration: underline white;
   color: white !important;
-}
-
-.navbar-toggler-icon {
-  background-color: white;
 }

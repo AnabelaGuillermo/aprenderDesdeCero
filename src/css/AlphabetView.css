@@ -1,0 +1,53 @@
+.Alphabet {
+  text-align: center;
+  padding: 20px;
+}
+
+.abecedario {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.alphabet-buttons {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.buttonAlphabet {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.buttonAlphabet:hover {
+  background-color: rgb(238, 173, 52);
+}
+
+@media (max-width: 768px) {
+  .alphabet-buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .alphabet-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
