@@ -9,7 +9,7 @@ const HomeView = () => {
         <article class="overlay"></article>
         <h1 className="tituloHome">Aprender de cero</h1>
         <img
-          src="/public/colors.jpg"
+          src="../../public/colors.jpg"
           alt="Imagen de papeles de colores"
           className="portadaCubos"
         />
