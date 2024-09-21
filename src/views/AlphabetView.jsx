@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import AlphabetButton from "../components/AlphabetView/Alphabet";
 
+import '../css/AlphabetView.css'
+
 const alphabet = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("");
 
 function Alphabet() {
@@ -11,8 +13,8 @@ function Alphabet() {
   };
 
   return (
-    <section className="Alphabet">
-      <h1>Abecedario</h1>
+    <section className="container Alphabet">
+      <h1 className="abecedario">Abecedario</h1>
       <article className="alphabet-buttons">
         {alphabet.map((letter) => (
           <AlphabetButton

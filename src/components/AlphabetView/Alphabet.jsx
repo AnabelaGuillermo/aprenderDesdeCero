@@ -16,7 +16,7 @@ export const AlphabetButton = ({ letter }) => {
     speechSynthesis.speak(utterance);
   };
 
-  return <button onClick={handleButtonClick}>{letter}</button>;
+  return <button className="buttonAlphabet" onClick={handleButtonClick}>{letter}</button>;
 };
 
 export default AlphabetButton;
