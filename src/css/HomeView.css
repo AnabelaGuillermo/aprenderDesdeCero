@@ -1,40 +1,18 @@
 .portadaHome {
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  height: 400px;
-  z-index: 500;
+  background-image: url("../../public/colors.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
 }
 
 .tituloHome {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -70%);
-  padding: 20px;
-  z-index: 2;
-  font-size: 3em;
   animation: colorChange 3s infinite;
   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
   font-size: 80px;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 45px;
 }
-
-.portadaCubos {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
 
 @keyframes colorChange {
   0% {
@@ -51,5 +29,26 @@
   }
   100% {
     color: purple;
+  }
+}
+
+@media (max-width: 768px) { 
+  .tituloHome {
+    font-size: 60px;
+    padding-top: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portadaHome {
+    background-image: url("../../public/colors-2.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .tituloHome {
+    font-size: 50px;
+    padding-top: 95px;
   }
 }
