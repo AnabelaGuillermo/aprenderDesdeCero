@@ -9,14 +9,14 @@ const VirtualKeyboard = () => {
     const position = cursorPosition !== null ? cursorPosition : text.length;
     const newText = text.slice(0, position) + (char === "Espacio" ? " " : char) + text.slice(position);
     setText(newText);
-    setCursorPosition(position + 1); // Mover el cursor una posición adelante
+    setCursorPosition(position + 1);
   };
 
   const handleDelete = () => {
     if (cursorPosition > 0) {
       const newText = text.slice(0, cursorPosition - 1) + text.slice(cursorPosition);
       setText(newText);
-      setCursorPosition(cursorPosition - 1); // Mover el cursor una posición atrás
+      setCursorPosition(cursorPosition - 1);
     }
   };
 

@@ -12,12 +12,12 @@ const Keyboard = ({ onAddChar, onDelete }) => {
           <Key key={char} label={char} onClick={onAddChar} />
         ))}
       </article>
-      <article className="special-keys">
+      <div className="special-keys">
         <Key label="Espacio" onClick={onAddChar} />
         <Key label="." onClick={onAddChar} />
         <Key label="," onClick={onAddChar} />
         <Key label="Borrar" onClick={onDelete} />
-      </article>
+      </div>
     </section>
   );
 };
