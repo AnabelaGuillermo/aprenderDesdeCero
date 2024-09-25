@@ -3,41 +3,60 @@ import Keyboard from "../components/WriteAndListenView/Keyboard";
 
 const VirtualKeyboard = () => {
   const [text, setText] = useState("");
+  const [cursorPosition, setCursorPosition] = useState(null);
 
   const handleAddChar = (char) => {
-    setText((prevText) => prevText + (char === "Espacio" ? " " : char));
+    const position = cursorPosition !== null ? cursorPosition : text.length;
+    const newText = text.slice(0, position) + (char === "Espacio" ? " " : char) + text.slice(position);
+    setText(newText);
+    setCursorPosition(position + 1); // Mover el cursor una posición adelante
   };
 
   const handleDelete = () => {
-    setText((prevText) => prevText.slice(0, -1));
+    if (cursorPosition > 0) {
+      const newText = text.slice(0, cursorPosition - 1) + text.slice(cursorPosition);
+      setText(newText);
+      setCursorPosition(cursorPosition - 1); // Mover el cursor una posición atrás
+    }
   };
 
   const handlePlayText = () => {
     if (text) {
-      alert(`Reproduciendo: ${text}`);
+      const speech = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(speech);
     }
   };
 
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+    setCursorPosition(e.target.selectionStart);
+  };
+
+  const handleCursorChange = (e) => {
+    setCursorPosition(e.target.selectionStart);
+  };
+
   return (
-    <div className="virtual-keyboard">
+    <section className="container text-center virtual-keyboard">
       <h2>Escribe tu frase</h2>
-      <div className="display">
+      <article className="display">
         <input
           type="text"
           value={text}
-          readOnly
+          onChange={handleTextChange}
+          onClick={handleCursorChange}
           placeholder="Tu frase aquí..."
         />
-      </div>
+      </article>
 
       <Keyboard onAddChar={handleAddChar} onDelete={handleDelete} />
 
-      <div className="controls">
+      <article className="controls">
         <button onClick={handlePlayText} disabled={text.length === 0}>
           Reproducir
         </button>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

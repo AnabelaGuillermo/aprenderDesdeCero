@@ -1,5 +1,5 @@
 .footerArcoiris {
-  background-image: url("../../../public/footer-color.jpg");
+  background-image: url("/footer-color.jpg");
   background-size: cover;
   background-position: center;
   height: 80px;
