@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Keyboard from "../components/WriteAndListenView/Keyboard";
 
+import "../css/WriteAndListenView.css";
+
 const VirtualKeyboard = () => {
   const [text, setText] = useState("");
   const [cursorPosition, setCursorPosition] = useState(null);
@@ -24,6 +26,11 @@ const VirtualKeyboard = () => {
     }
   };
 
+  const handleClearText = () => {
+    setText("");
+    setCursorPosition(null);
+  };
+
   const handlePlayText = () => {
     if (text) {
       const speech = new SpeechSynthesisUtterance(text);
@@ -42,7 +49,7 @@ const VirtualKeyboard = () => {
   };
 
   return (
-    <section className="container text-center virtual-keyboard">
+    <section className="container text-center virtual-keyboard mt-4">
       <h2>Escribe tu frase</h2>
       <article className="display">
         <input
@@ -59,6 +66,9 @@ const VirtualKeyboard = () => {
       <article className="controls">
         <button onClick={handlePlayText} disabled={text.length === 0}>
           Reproducir
+        </button>
+        <button onClick={handleClearText} disabled={text.length === 0}>
+          Borrar todo
         </button>
       </article>
     </section>

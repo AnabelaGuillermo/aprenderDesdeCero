@@ -16,6 +16,10 @@ const Keyboard = ({ onAddChar, onDelete }) => {
         <Key label="Espacio" onClick={onAddChar} />
         <Key label="." onClick={onAddChar} />
         <Key label="," onClick={onAddChar} />
+        <Key label="¡" onClick={onAddChar} />
+        <Key label="!" onClick={onAddChar} />
+        <Key label="¿" onClick={onAddChar} />
+        <Key label="?" onClick={onAddChar} />
         <Key label="Borrar" onClick={onDelete} />
       </div>
     </section>
