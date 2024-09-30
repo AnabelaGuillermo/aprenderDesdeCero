@@ -47,27 +47,32 @@ const Stories = ({ text }) => {
   };
 
   return (
-    <div style={{ marginBottom: "20px" }}>
+    <section className="mt-3 stories">
       <p>
         {text.split(" ").map((palabra, index) => (
           <span
             key={index}
-            style={{
-              backgroundColor:
-                index === currentWordIndex ? "yellow" : "transparent",
-            }}
+            className={index === currentWordIndex ? "highlighted" : "normal"}
           >
             {palabra}{" "}
           </span>
         ))}
       </p>
-      <button onClick={readStories} disabled={isReading}>
-        {isReading ? "Leyendo..." : "Reproducir Cuento"}
+      <button
+        onClick={readStories}
+        disabled={isReading}
+        className="reproducir text-white"
+      >
+        {isReading ? "Leyendo..." : "Reproducir"}
       </button>
-      <button onClick={stopReading} disabled={!isReading}>
+      <button
+        onClick={stopReading}
+        disabled={!isReading}
+        className={isReading ? "stop-button active" : "stop-button"}
+      >
         Detener
       </button>
-    </div>
+    </section>
   );
 };
 
