@@ -7,14 +7,18 @@ const VirtualKeyboard = () => {
 
   const handleAddChar = (char) => {
     const position = cursorPosition !== null ? cursorPosition : text.length;
-    const newText = text.slice(0, position) + (char === "Espacio" ? " " : char) + text.slice(position);
+    const newText =
+      text.slice(0, position) +
+      (char === "Espacio" ? " " : char) +
+      text.slice(position);
     setText(newText);
     setCursorPosition(position + 1);
   };
 
   const handleDelete = () => {
     if (cursorPosition > 0) {
-      const newText = text.slice(0, cursorPosition - 1) + text.slice(cursorPosition);
+      const newText =
+        text.slice(0, cursorPosition - 1) + text.slice(cursorPosition);
       setText(newText);
       setCursorPosition(cursorPosition - 1);
     }
@@ -23,6 +27,7 @@ const VirtualKeyboard = () => {
   const handlePlayText = () => {
     if (text) {
       const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = "es-ES";
       window.speechSynthesis.speak(speech);
     }
   };

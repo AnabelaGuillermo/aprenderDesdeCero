@@ -1,14 +1,14 @@
-import React from 'react';
-import Key from './Key';
+import React from "react";
+import Key from "./Key";
 
 const Keyboard = ({ onAddChar, onDelete }) => {
-  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-  const specialChars = [' ', '.', ',', 'Borrar'];
+  const alphabet = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("");
+  const specialChars = [" ", ".", ",", "¡", "!", "¿", "?", "Borrar"];
 
   return (
     <section>
       <article className="alphabet">
-        {alphabet.map(char => (
+        {alphabet.map((char) => (
           <Key key={char} label={char} onClick={onAddChar} />
         ))}
       </article>
