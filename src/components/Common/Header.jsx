@@ -56,6 +56,16 @@ const Header = () => {
                   Escribe y escucha
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  to="/Lectura en voz alta"
+                >
+                  Lectura en voz alta
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
