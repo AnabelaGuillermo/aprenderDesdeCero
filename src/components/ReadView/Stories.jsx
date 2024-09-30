@@ -3,36 +3,56 @@ import React, { useState } from "react";
 const Stories = ({ text }) => {
   const [isReading, setIsReading] = useState(false);
   const [currentWordIndex, setCurrentWordIndex] = useState(null);
-  const [intervalId, setIntervalId] = useState(null);
+  const [selectedWord, setSelectedWord] = useState(null);
+
+  const readWord = (palabra) => {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(palabra);
+    synth.cancel();
+
+    utterance.rate = 0.4;
+
+    utterance.onstart = () => {
+      setIsReading(true);
+      setSelectedWord(palabra);
+    };
+
+    utterance.onend = () => {
+      setIsReading(false);
+    };
+
+    synth.speak(utterance);
+  };
 
   const readStories = () => {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
 
-    utterance.rate = 0.3;
+    utterance.rate = 0.4;
 
     const palabras = text.split(" ");
 
+    utterance.onboundary = (event) => {
+      if (event.charIndex < text.length) {
+        const wordIndex = palabras.findIndex((_, index) => {
+          const start = text.indexOf(palabras[index]);
+          const end = start + palabras[index].length;
+          return event.charIndex >= start && event.charIndex < end;
+        });
+
+        setCurrentWordIndex(wordIndex);
+      }
+    };
+
     utterance.onstart = () => {
       setIsReading(true);
-      let wordIndex = 0;
-
-      const id = setInterval(() => {
-        if (wordIndex < palabras.length) {
-          setCurrentWordIndex(wordIndex);
-          wordIndex++;
-        } else {
-          clearInterval(id);
-        }
-      }, 600);
-
-      setIntervalId(id);
+      setCurrentWordIndex(0);
+      setSelectedWord(null);
     };
 
     utterance.onend = () => {
       setIsReading(false);
       setCurrentWordIndex(null);
-      clearInterval(intervalId);
     };
 
     synth.speak(utterance);
@@ -43,7 +63,7 @@ const Stories = ({ text }) => {
     synth.cancel();
     setIsReading(false);
     setCurrentWordIndex(null);
-    clearInterval(intervalId);
+    setSelectedWord(null);
   };
 
   return (
@@ -52,7 +72,18 @@ const Stories = ({ text }) => {
         {text.split(" ").map((palabra, index) => (
           <span
             key={index}
-            className={index === currentWordIndex ? "highlighted" : "normal"}
+            onClick={() => {
+              readWord(palabra);
+              setSelectedWord(palabra);
+              setCurrentWordIndex(index);
+            }}
+            className={
+              index === currentWordIndex
+                ? "highlighted"
+                : palabra === selectedWord
+                ? "highlighted"
+                : "normal"
+            }
           >
             {palabra}{" "}
           </span>
