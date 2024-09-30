@@ -41,7 +41,7 @@
 
 @media (max-width: 480px) {
   .portadaHome {
-    background-image: url("../../public/colors-2.jpg");
+    background-image: url("/colors-2.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
