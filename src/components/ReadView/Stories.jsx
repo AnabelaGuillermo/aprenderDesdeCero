@@ -3,9 +3,9 @@ import React, { useState } from "react";
 const Stories = ({ text }) => {
   const [isReading, setIsReading] = useState(false);
   const [currentWordIndex, setCurrentWordIndex] = useState(null);
-  const [selectedWord, setSelectedWord] = useState(null);
+  const [selectedWordIndex, setSelectedWordIndex] = useState(null);
 
-  const readWord = (palabra) => {
+  const readWord = (palabra, index) => {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(palabra);
     synth.cancel();
@@ -14,7 +14,8 @@ const Stories = ({ text }) => {
 
     utterance.onstart = () => {
       setIsReading(true);
-      setSelectedWord(palabra);
+      setCurrentWordIndex(index);
+      setSelectedWordIndex(index);
     };
 
     utterance.onend = () => {
@@ -26,28 +27,31 @@ const Stories = ({ text }) => {
 
   const readStories = () => {
     const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(text);
-
-    utterance.rate = 0.4;
-
     const palabras = text.split(" ");
 
+    const startIndex = selectedWordIndex !== null ? selectedWordIndex : 0;
+
+    const textToRead = palabras.slice(startIndex).join(" ");
+
+    const utterance = new SpeechSynthesisUtterance(textToRead);
+    utterance.rate = 0.4;
+
     utterance.onboundary = (event) => {
-      if (event.charIndex < text.length) {
+      if (event.charIndex < textToRead.length) {
         const wordIndex = palabras.findIndex((_, index) => {
-          const start = text.indexOf(palabras[index]);
-          const end = start + palabras[index].length;
+          const start = textToRead.indexOf(palabras[index + startIndex]);
+          const end = start + palabras[index + startIndex].length;
           return event.charIndex >= start && event.charIndex < end;
         });
 
-        setCurrentWordIndex(wordIndex);
+        setCurrentWordIndex(wordIndex + startIndex);
       }
     };
 
     utterance.onstart = () => {
       setIsReading(true);
-      setCurrentWordIndex(0);
-      setSelectedWord(null);
+      setCurrentWordIndex(startIndex);
+      setSelectedWordIndex(null);
     };
 
     utterance.onend = () => {
@@ -63,7 +67,7 @@ const Stories = ({ text }) => {
     synth.cancel();
     setIsReading(false);
     setCurrentWordIndex(null);
-    setSelectedWord(null);
+    setSelectedWordIndex(null);
   };
 
   return (
@@ -73,14 +77,12 @@ const Stories = ({ text }) => {
           <span
             key={index}
             onClick={() => {
-              readWord(palabra);
-              setSelectedWord(palabra);
-              setCurrentWordIndex(index);
+              readWord(palabra, index);
             }}
             className={
               index === currentWordIndex
                 ? "highlighted"
-                : palabra === selectedWord
+                : index === selectedWordIndex
                 ? "highlighted"
                 : "normal"
             }

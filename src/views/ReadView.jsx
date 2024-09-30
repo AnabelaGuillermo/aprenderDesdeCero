@@ -19,6 +19,8 @@ function Read() {
   return (
     <section className="Read mt-4 text-center container">
       <h2>Cuentos Cortos</h2>
+      <p className="mb-5">Haz clic en reproducir para que el cuento sea leído en voz alta. También puedes hacer clic sobre una palabra para escucharla.</p>
+      <hr />
       {stories.map((text, index) => (
         <React.Fragment key={index}>
           <Stories text={text} />
