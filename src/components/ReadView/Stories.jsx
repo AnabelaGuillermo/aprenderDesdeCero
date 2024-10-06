@@ -91,6 +91,7 @@ const Stories = ({ text }) => {
           </span>
         ))}
       </p>
+      <article className="button-stories">
       <button
         onClick={readStories}
         disabled={isReading}
@@ -105,6 +106,7 @@ const Stories = ({ text }) => {
       >
         Detener
       </button>
+      </article>
     </section>
   );
 };
