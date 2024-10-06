@@ -13,7 +13,7 @@ function Alphabet() {
   };
 
   return (
-    <section className="container Alphabet">
+    <section className="container Alphabet mt-5">
       <h1 className="abecedario">Abecedario</h1>
       <article className="alphabet-buttons">
         {alphabet.map((letter) => (

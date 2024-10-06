@@ -1,3 +1,9 @@
+.Read {
+  & h1 {
+    font-size: 2rem;
+  }
+}
+
 .stories {
   & button {
     width: 120px;
@@ -7,7 +13,7 @@
 .button-stories {
   display: flex;
   justify-content: center;
-  
+
   & button {
     margin: 0px 5px 0px 5px;
   }

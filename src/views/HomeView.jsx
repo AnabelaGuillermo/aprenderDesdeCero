@@ -5,7 +5,7 @@ import "../css/HomeView.css";
 const HomeView = () => {
   return (
     <>
-      <section className="container-fluid portadaHome">
+      <section className="portadaHome">
         <h1 className="tituloHome">Aprender de cero</h1>
       </section>
     </>

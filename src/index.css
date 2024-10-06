@@ -10,21 +10,6 @@
   font-family: "Nunito";
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  margin-top: 100px;
-  flex: 1;
-}
-
-footer {
-  margin-top: auto;
+  margin-top: 86px !important;
 }

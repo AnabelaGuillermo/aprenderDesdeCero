@@ -49,8 +49,8 @@ const VirtualKeyboard = () => {
   };
 
   return (
-    <section className="container text-center virtual-keyboard mt-4">
-      <h2>Escribe tu frase</h2>
+    <section className="container text-center virtual-keyboard mt-5">
+      <h1>Escribe tu frase</h1>
       <article className="display mt-4">
         <input
           type="text"
