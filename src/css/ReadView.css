@@ -16,6 +16,9 @@
 
   & button {
     margin: 0px 5px 0px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }
 
