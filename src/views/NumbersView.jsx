@@ -134,10 +134,15 @@ function NumbersView() {
       <h1>Conoce los números</h1>
       <article className="display mt-4">
         <input
-          type="text"
+          type="number"
           placeholder="Escribe un número"
           value={number}
           onChange={handleChange}
+          onKeyPress={(e) => {
+            if (!/[0-9]/.test(e.key)) {
+              e.preventDefault();
+            }
+          }}
         />
       </article>
       <article className="controls">
