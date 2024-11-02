@@ -66,6 +66,16 @@ const Header = () => {
                   Lectura en voz alta
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  to="/Números"
+                >
+                  Números
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

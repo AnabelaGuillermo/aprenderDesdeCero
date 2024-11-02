@@ -5,6 +5,7 @@ import AlphabetView from "../views/AlphabetView";
 import WriteAndListenView from "../views/WriteAndListenView"
 import ReadView from "../views/ReadView";
 import Error404View from "../views/Error404View";
+import NumbersView from "../views/NumbersView"
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "Lectura en voz alta",
         element: <ReadView />,
+      },
+      {
+        path: "Números",
+        element: <NumbersView />,
       },
       {
         path: "*",
