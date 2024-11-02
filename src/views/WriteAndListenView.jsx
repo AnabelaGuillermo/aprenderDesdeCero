@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Keyboard from "../components/WriteAndListenView/Keyboard";
-
 import "../css/WriteAndListenView.css";
 
 const VirtualKeyboard = () => {
@@ -33,9 +31,17 @@ const VirtualKeyboard = () => {
 
   const handlePlayText = () => {
     if (text) {
+      window.speechSynthesis.cancel();
+
       const speech = new SpeechSynthesisUtterance(text);
       speech.lang = "es-ES";
-      window.speechSynthesis.speak(speech);
+      speech.volume = 1;
+      speech.pitch = 1;
+      speech.rate = 1;
+
+      setTimeout(() => {
+        window.speechSynthesis.speak(speech);
+      }, 100);
     }
   };
 
@@ -60,8 +66,6 @@ const VirtualKeyboard = () => {
           placeholder="Tu frase aquí..."
         />
       </article>
-
-      <Keyboard onAddChar={handleAddChar} onDelete={handleDelete} />
 
       <article className="controls">
         <button onClick={handlePlayText} disabled={text.length === 0}>
