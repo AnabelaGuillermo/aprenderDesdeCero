@@ -76,6 +76,16 @@ const Header = () => {
                   Números
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                  to="/Colores"
+                >
+                  Colores
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

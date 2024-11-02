@@ -131,7 +131,7 @@ function NumbersView() {
 
   return (
     <section className="container text-center mt-5">
-      <h2>Conoce los números</h2>
+      <h1>Conoce los números</h1>
       <article className="display mt-4">
         <input
           type="text"
