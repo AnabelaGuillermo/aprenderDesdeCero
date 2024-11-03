@@ -4,6 +4,7 @@ import "../css/WriteAndListenView.css";
 const VirtualKeyboard = () => {
   const [text, setText] = useState("");
   const [cursorPosition, setCursorPosition] = useState(null);
+  const [playbackRate, setPlaybackRate] = useState(1);
 
   const handleAddChar = (char) => {
     const position = cursorPosition !== null ? cursorPosition : text.length;
@@ -37,7 +38,7 @@ const VirtualKeyboard = () => {
       speech.lang = "es-ES";
       speech.volume = 1;
       speech.pitch = 1;
-      speech.rate = 1;
+      speech.rate = playbackRate;
 
       setTimeout(() => {
         window.speechSynthesis.speak(speech);
@@ -73,6 +74,33 @@ const VirtualKeyboard = () => {
         </button>
         <button onClick={handleClearText} disabled={text.length === 0}>
           Borrar todo
+        </button>
+      </article>
+
+      <article className="playback-controls mt-3">
+        <button
+          onClick={() => setPlaybackRate(1)}
+          className={`playback-button ${playbackRate === 1 ? "active" : ""}`}
+        >
+          1x
+        </button>
+        <button
+          onClick={() => setPlaybackRate(0.75)}
+          className={`playback-button ${playbackRate === 0.75 ? "active" : ""}`}
+        >
+          0.75x
+        </button>
+        <button
+          onClick={() => setPlaybackRate(0.5)}
+          className={`playback-button ${playbackRate === 0.5 ? "active" : ""}`}
+        >
+          0.5x
+        </button>
+        <button
+          onClick={() => setPlaybackRate(0.2)}
+          className={`playback-button ${playbackRate === 0.2 ? "active" : ""}`}
+        >
+          0.2x
         </button>
       </article>
     </section>
