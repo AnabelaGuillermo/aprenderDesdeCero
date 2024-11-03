@@ -3,7 +3,6 @@ export const data = {
     { name: "Cocina", image: "/homeStuff/cocina.jpg" },
     { name: "Microondas", image: "/homeStuff/microondas.jpg" },
     { name: "Heladera", image: "/homeStuff/heladera.jpg" },
-    { name: "Pileta", image: "/homeStuff/pileta.jpg" },
     { name: "Alacena", image: "/homeStuff/alacena.jpg" },
     { name: "Cuchara", image: "/homeStuff/cuchara.jpg" },
     { name: "Tenedor", image: "/homeStuff/tenedor.jpg" },
@@ -64,7 +63,7 @@ export const data = {
   ],
   Lavadero: [
     { name: "Lavarropas", image: "/homeStuff/lavarropas.jpg" },
-    { name: "Secarropas", image: "/homeStuff/ducha.jpg" },
+    { name: "Secarropas", image: "/homeStuff/secarropas.jpg" },
     { name: "Plancha", image: "/homeStuff/plancha.jpg" },
   ],
   Patio: [
