@@ -7,6 +7,7 @@ import ReadView from "../views/ReadView";
 import Error404View from "../views/Error404View";
 import NumbersView from "../views/NumbersView";
 import ColorsView from "../views/ColorsView";
+import HomeStuffView from "../views/HomeStuffView";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
       {
         path: "Colores",
         element: <ColorsView />,
+      },
+      {
+        path: "Cosas de la casa",
+        element: <HomeStuffView />,
       },
       {
         path: "*",
