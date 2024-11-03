@@ -1,9 +1,3 @@
-.Read {
-  & h1 {
-    font-size: 2rem;
-  }
-}
-
 .stories {
   & button {
     width: 120px;

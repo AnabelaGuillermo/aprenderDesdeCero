@@ -1,12 +1,8 @@
 .Alphabet {
   text-align: center;
-  & h1 {
-    font-size: 2rem;
-  }
 }
 
 .abecedario {
-  font-size: 2rem;
   margin-bottom: 20px;
 }
 
