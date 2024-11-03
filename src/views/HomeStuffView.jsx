@@ -13,7 +13,7 @@ function App() {
       <Dropdown title="Living Comedor ↓" items={data.LivingComedor} />
       <Dropdown title="Cuarto ↓" items={data.Cuarto} />
       <Dropdown title="Baño ↓" items={data.Baño} />
-      <Dropdown title="Lavaro ↓" items={data.Lavadero} />
+      <Dropdown title="Lavadero ↓" items={data.Lavadero} />
       <Dropdown title="Patio ↓" items={data.Patio} />
     </section>
   );

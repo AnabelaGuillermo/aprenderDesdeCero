@@ -59,6 +59,13 @@ function numberToWords(num) {
   if (num === 100) return "cien";
   if (num < 10) return units[num];
   if (num < 20) return teens[num - 10];
+
+  if (num === 22) return "veintidós";
+  if (num === 23) return "veintitrés";
+  if (num === 26) return "veintiséis";
+
+  if (num > 20 && num < 30) return "veinti" + units[num - 20];
+
   if (num < 100)
     return (
       tens[Math.floor(num / 10)] +
