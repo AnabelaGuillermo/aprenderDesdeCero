@@ -30,7 +30,7 @@ export const data = {
     { name: "Cortina", image: "/homeStuff/cortina.jpg" },
   ],
   Cuarto: [
-    { name: "Cama", image: "/homeStuff/" },
+    { name: "Cama", image: "/homeStuff/cama.jpg" },
     { name: "Almohada", image: "/homeStuff/almohada.jpg" },
     { name: "Colchón", image: "/homeStuff/colchon.jpg" },
     { name: "Sábana", image: "/homeStuff/sabana.jpg" },
@@ -73,7 +73,7 @@ export const data = {
     { name: "Planta", image: "/homeStuff/planta.jpg" },
     { name: "Flor", image: "/homeStuff/flor.jpg" },
     { name: "Árbol", image: "/homeStuff/arbol.jpg" },
-    { name: "Césped", image: "/homeStuff/cesped.jpg" },
+    { name: "Césped", image: "/homeStuff/cesped.jpeg" },
     { name: "Hamaca", image: "/homeStuff/hamaca.jpg" },
     { name: "Manguera", image: "/homeStuff/manguera.jpg" },
     { name: "Pileta", image: "/homeStuff/piletapatio.jpg" },

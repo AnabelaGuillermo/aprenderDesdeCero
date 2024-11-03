@@ -1,0 +1,45 @@
+.homeStuff {
+  text-align: center;
+}
+
+.dropdown-button {
+  background-color: #08aec4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dropdown-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+.item-card {
+  width: 100px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform 0.3s;
+  
+  & p {
+    background-color: rgb(238, 173, 52);
+  }
+}
+
+.item-card:hover {
+    transform: scale(1.1);
+  }  
+
+.item-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: solid black 2px;
+}
