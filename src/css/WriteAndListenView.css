@@ -83,6 +83,34 @@ button:hover {
   background-color: #098b9c;
 }
 
+.playback-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.playback-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ddd;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.playback-button.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.playback-button:hover {
+  background-color: #bbb;
+}
+
 @media (max-width: 768px) {
   button {
     width: 45px;
