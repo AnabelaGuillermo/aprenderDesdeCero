@@ -48,6 +48,7 @@ export const data = {
   ],
   Baño: [
     { name: "Inodoro", image: "/homeStuff/inodoro.jpg" },
+    { name: "Bidet", image: "/homeStuff/bidet.jpg" },
     { name: "Ducha", image: "/homeStuff/ducha.jpg" },
     { name: "Pileta", image: "/homeStuff/pileta.jpg" },
     { name: "Espejo", image: "/homeStuff/espejobaño.jpg" },
