@@ -72,7 +72,7 @@ const VirtualKeyboard = () => {
         <button onClick={handlePlayText} disabled={text.length === 0}>
           Reproducir
         </button>
-        <button onClick={handleClearText} disabled={text.length === 0}>
+        <button onClick={handleClearText} disabled={text.length === 0} className="button-orange">
           Borrar todo
         </button>
       </article>

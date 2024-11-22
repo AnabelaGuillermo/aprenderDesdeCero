@@ -156,7 +156,7 @@ function NumbersView() {
         <button onClick={handleSpeak} disabled={number.length === 0}>
           Reproducir
         </button>
-        <button onClick={handleClear} disabled={number.length === 0}>
+        <button onClick={handleClear} disabled={number.length === 0} className="button-orange">
           Borrar todo
         </button>
       </article>
