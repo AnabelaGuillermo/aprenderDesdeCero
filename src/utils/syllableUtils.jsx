@@ -61,7 +61,7 @@ export function divide(word) {
   while (!end) {
     ++securityBreak;
     if (securityBreak > 20) {
-      throw "Error processing word";
+      throw "Error procesando la palabra";
       return "";
     }
     for (let i = 0; i < regexStep1.length; ++i) {

@@ -26,3 +26,21 @@ body,
 .container-fluid.flex-grow-1 {
   flex-grow: 1;
 }
+
+.button-orange {
+  background-color: rgb(238, 173, 52) !important;
+  color: white;
+  margin: 0px 5px 0px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-orange:hover {
+  background-color: rgb(212, 146, 23) !important;
+}
+
+.button-orange:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+}
