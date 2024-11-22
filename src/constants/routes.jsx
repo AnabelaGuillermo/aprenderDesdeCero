@@ -8,6 +8,7 @@ import Error404View from "../views/Error404View";
 import NumbersView from "../views/NumbersView";
 import ColorsView from "../views/ColorsView";
 import HomeStuffView from "../views/HomeStuffView";
+import SyllablesView from "../views/SyllablesView";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: "Cosas de la casa",
         element: <HomeStuffView />,
+      },
+      {
+        path: "Sílabas",
+        element: <SyllablesView />,
       },
       {
         path: "*",
