@@ -4,6 +4,7 @@ import { divide } from "../../utils/syllableUtils";
 const SyllableDivider = () => {
   const [word, setWord] = useState("");
   const [syllables, setSyllables] = useState("");
+  const [selectedSyllable, setSelectedSyllable] = useState(null);
 
   const handleWordChange = (event) => {
     setWord(event.target.value);
@@ -24,21 +25,31 @@ const SyllableDivider = () => {
   const handleClear = () => {
     setWord("");
     setSyllables("");
+    setSelectedSyllable(null);
   };
 
-  const handleSpeak = () => {
+  const handleSpeak = (syllable) => {
     if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance(syllables);
-      utterance.rate = 0.2;
+      const utterance = new SpeechSynthesisUtterance(syllable);
+      utterance.rate = 0.5;
       window.speechSynthesis.speak(utterance);
     } else {
       alert("Tu navegador no soporta síntesis de voz.");
     }
   };
 
+  const handleSyllableClick = (syllable) => {
+    setSelectedSyllable(syllable);
+    handleSpeak(syllable);
+  };
+
   return (
     <article>
       <h1>Separar en Sílabas</h1>
+      <p className="mb-3">
+        Haz clic en separar para dividir en sílabas. También puedes hacer clic
+        sobre cada sílaba para escucharla.
+      </p>
       <div className="mt-3">
         <label className="palabra">Palabra: </label>
         <input
@@ -50,10 +61,28 @@ const SyllableDivider = () => {
       </div>
       <div className="mt-3">
         <label className="silabas">Sílabas: </label>
-        <span className="ms-2 syllables-divide">{syllables}</span>
+        <span className="ms-2 syllables-divide">
+          {syllables.split(" ").map((word, index) => (
+            <span key={index}>
+              {word.split("-").map((syllable, idx, arr) => (
+                <span key={idx}>
+                  <span
+                    className={`syllable ${
+                      selectedSyllable === syllable ? "highlighted" : ""
+                    }`}
+                    onClick={() => handleSyllableClick(syllable)}
+                  >
+                    {syllable}
+                  </span>
+                  {idx < arr.length - 1 && "-"}
+                </span>
+              ))}{" "}
+            </span>
+          ))}
+        </span>
         {syllables && (
           <button
-            onClick={handleSpeak}
+            onClick={() => handleSpeak(syllables)}
             className="ms-3 btn"
             aria-label="Reproducir sílabas"
           >
