@@ -19,7 +19,7 @@ const colors = [
 
 const ColorsView = () => {
   return (
-    <section className="colors mt-5">
+    <section className="container colors mt-5">
       <h1>Colores</h1>
       <p>Haz clic para escuchar el nombre del color.</p>
       <div className="color-container">

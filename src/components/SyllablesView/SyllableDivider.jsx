@@ -11,8 +11,14 @@ const SyllableDivider = () => {
   };
 
   const handleDivide = () => {
-    const dividedSyllables = divide(word);
-    setSyllables(dividedSyllables.join("-"));
+    const words = word.trim().split(" ");
+
+    const syllabifiedWords = words.map((singleWord) => {
+      const dividedSyllables = divide(singleWord);
+      return dividedSyllables.join("-");
+    });
+
+    setSyllables(syllabifiedWords.join(" "));
   };
 
   const handleClear = () => {
@@ -39,7 +45,7 @@ const SyllableDivider = () => {
           type="text"
           value={word}
           onChange={handleWordChange}
-          placeholder="Escribe una palabra"
+          placeholder="Escribe una palabra o una oración"
         />
       </div>
       <div className="mt-3">
