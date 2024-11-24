@@ -6,6 +6,10 @@ const SyllableDivider = () => {
   const [syllables, setSyllables] = useState("");
   const [selectedSyllable, setSelectedSyllable] = useState(null);
 
+  const removeAccents = (text) => {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
   const handleWordChange = (event) => {
     setWord(event.target.value);
     setSyllables("");
@@ -30,7 +34,7 @@ const SyllableDivider = () => {
 
   const handleSpeak = (syllable) => {
     if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance(syllable);
+      const utterance = new SpeechSynthesisUtterance(removeAccents(syllable));
       utterance.rate = 0.5;
       window.speechSynthesis.speak(utterance);
     } else {
