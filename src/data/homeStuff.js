@@ -1,4 +1,4 @@
-export const data = {
+export const homeStuff = {
   Cocina: [
     { name: "Cocina", image: "/homeStuff/cocina.jpg" },
     { name: "Microondas", image: "/homeStuff/microondas.jpg" },
