@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ColorButtons from "../components/HomeView/ColorButtons";
+
 import "../css/WriteAndListenView.css";
 
 const VirtualKeyboard = () => {
@@ -72,7 +74,11 @@ const VirtualKeyboard = () => {
         <button onClick={handlePlayText} disabled={text.length === 0}>
           Reproducir
         </button>
-        <button onClick={handleClearText} disabled={text.length === 0} className="button-orange">
+        <button
+          onClick={handleClearText}
+          disabled={text.length === 0}
+          className="button-orange"
+        >
           Borrar todo
         </button>
       </article>
@@ -102,6 +108,10 @@ const VirtualKeyboard = () => {
         >
           0.2x
         </button>
+      </article>
+      <article className="mt-5 mb-2">
+        <hr />
+        <ColorButtons />
       </article>
     </section>
   );

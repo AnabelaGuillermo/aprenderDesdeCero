@@ -1,5 +1,7 @@
 import React from "react";
 import ColorSquare from "../components/ColorsView/ColorSquare";
+import ColorButtons from "../components/HomeView/ColorButtons";
+
 import "../css/ColorsView.css";
 
 const colors = [
@@ -22,11 +24,15 @@ const ColorsView = () => {
     <section className="container colors mt-5">
       <h1>Colores</h1>
       <p>Haz clic para escuchar el nombre del color.</p>
-      <div className="color-container">
+      <article className="color-container">
         {colors.map((color) => (
           <ColorSquare key={color.name} color={color} />
         ))}
-      </div>
+      </article>
+      <article className="mt-5 mb-2">
+        <hr />
+        <ColorButtons />
+      </article>
     </section>
   );
 };
