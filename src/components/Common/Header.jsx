@@ -40,11 +40,12 @@ const Header = () => {
                 "/Abecedario",
                 "/Escribe y escucha",
                 "/Lectura en voz alta",
+                "/Sílabas",
                 "/Números",
                 "/Colores",
-                "/Cosas de la casa",
+                "/Frutas",
                 "/Verduras",
-                "/Sílabas",
+                "/Cosas de la casa",
               ].map((path, index) => (
                 <li className="nav-item" key={index}>
                   <NavLink
