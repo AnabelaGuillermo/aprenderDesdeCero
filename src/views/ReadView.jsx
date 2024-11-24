@@ -18,7 +18,7 @@ const stories = [
 function Read() {
   return (
     <section className="Read text-center container mt-5">
-      <h1>Cuentos Cortos</h1>
+      <h1>Cuentos cortos</h1>
       <p className="mb-5">Haz clic en reproducir para que el cuento sea leído en voz alta. También puedes hacer clic sobre una palabra para escucharla.</p>
       <hr />
       {stories.map((text, index) => (

@@ -45,8 +45,8 @@ const SyllableDivider = () => {
 
   return (
     <article>
-      <h1>Separar en Sílabas</h1>
-      <p className="mb-3">
+      <h1 className="text-center">Separar en sílabas</h1>
+      <p className="mb-5 text-center">
         Haz clic en separar para dividir en sílabas. También puedes hacer clic
         sobre cada sílaba para escucharla.
       </p>
