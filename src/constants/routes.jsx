@@ -10,6 +10,7 @@ import ColorsView from "../views/ColorsView";
 import HomeStuffView from "../views/HomeStuffView";
 import SyllablesView from "../views/SyllablesView";
 import VegetablesView from "../views/VegetablesView";
+import FruitView from "../views/FruitView";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "Verduras",
         element: <VegetablesView />,
+      },
+      {
+        path: "Frutas",
+        element: <FruitView />,
       },
       {
         path: "*",
