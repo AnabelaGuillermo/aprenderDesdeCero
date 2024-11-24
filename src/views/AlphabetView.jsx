@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import AlphabetButton from "../components/AlphabetView/Alphabet";
+import ColorButtons from "../components/HomeView/ColorButtons";
 
-import '../css/AlphabetView.css'
+import "../css/AlphabetView.css";
 
 const alphabet = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("");
 
@@ -23,6 +24,10 @@ function Alphabet() {
             onAddLetter={handleAddLetter}
           />
         ))}
+      </article>
+      <article className="mt-5 mb-2">
+        <hr />
+        <ColorButtons />
       </article>
     </section>
   );

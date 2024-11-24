@@ -1,5 +1,7 @@
 import React from "react";
 import Stories from "../components/ReadView/Stories.jsx";
+import ColorButtons from "../components/HomeView/ColorButtons";
+
 import "../css/ReadView.css";
 
 const stories = [
@@ -19,14 +21,23 @@ function Read() {
   return (
     <section className="Read text-center container mt-5">
       <h1>Cuentos cortos</h1>
-      <p className="mb-5">Haz clic en reproducir para que el cuento sea leído en voz alta. También puedes hacer clic sobre una palabra para escucharla.</p>
-      <hr />
-      {stories.map((text, index) => (
-        <React.Fragment key={index}>
-          <Stories text={text} />
-          {index < stories.length - 1 && <hr />}
-        </React.Fragment>
-      ))}
+      <p className="mb-5">
+        Haz clic en reproducir para que el cuento sea leído en voz alta. También
+        puedes hacer clic sobre una palabra para escucharla.
+      </p>
+      <article>
+        <hr />
+        {stories.map((text, index) => (
+          <React.Fragment key={index}>
+            <Stories text={text} />
+            {index < stories.length - 1 && <hr />}
+          </React.Fragment>
+        ))}
+      </article>
+      <article className="mt-5 mb-2">
+        <hr />
+        <ColorButtons />
+      </article>
     </section>
   );
 }

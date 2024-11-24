@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ColorButtons from "../components/HomeView/ColorButtons";
+
 import "../css/NumberView.css";
 
 function capitalizeFirstLetter(text) {
@@ -162,6 +164,10 @@ function NumbersView() {
       </article>
       <article className="mt-5 numWord">
         {numberInWords && <p>{numberInWords}</p>}
+      </article>
+      <article className="mt-5 mb-2">
+        <hr />
+        <ColorButtons />
       </article>
     </section>
   );
