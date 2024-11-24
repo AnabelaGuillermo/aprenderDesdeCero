@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
         element: <SyllablesView />,
       },
       {
-        path: "Vegetales",
+        path: "Verduras",
         element: <VegetablesView />,
       },
       {
