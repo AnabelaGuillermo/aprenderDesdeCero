@@ -9,6 +9,7 @@ import NumbersView from "../views/NumbersView";
 import ColorsView from "../views/ColorsView";
 import HomeStuffView from "../views/HomeStuffView";
 import SyllablesView from "../views/SyllablesView";
+import VegetablesView from "../views/VegetablesView";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "Sílabas",
         element: <SyllablesView />,
+      },
+      {
+        path: "Vegetales",
+        element: <VegetablesView />,
       },
       {
         path: "*",
