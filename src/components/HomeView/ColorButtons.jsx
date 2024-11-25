@@ -15,6 +15,7 @@ const ColorButtons = () => {
       <Link to="/Frutas" className="btn red-btn">Frutas</Link>
       <Link to="/Verduras" className="btn green-btn">Verduras</Link>
       <Link to="/Cosas de la casa" className="btn blue-btn">Cosas de la casa</Link>
+      <Link to="/Formas" className="btn orange-btn">Formas</Link>
     </article>
   );
 };
