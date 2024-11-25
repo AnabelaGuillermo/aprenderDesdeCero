@@ -46,6 +46,7 @@ const Header = () => {
                 "/Frutas",
                 "/Verduras",
                 "/Cosas de la casa",
+                "/Formas",
               ].map((path, index) => (
                 <li className="nav-item" key={index}>
                   <NavLink
