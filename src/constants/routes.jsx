@@ -12,6 +12,7 @@ import SyllablesView from "../views/SyllablesView";
 import VegetablesView from "../views/VegetablesView";
 import FruitView from "../views/FruitView";
 import ShapesView from "../views/ShapesView";
+import AnimalsView from "../views/AnimalsView";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: "Formas",
         element: <ShapesView />,
+      },
+      {
+        path: "Animales",
+        element: <AnimalsView />,
       },
       {
         path: "*",

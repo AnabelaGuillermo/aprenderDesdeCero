@@ -45,6 +45,7 @@ const Header = () => {
                 "/Colores",
                 "/Frutas",
                 "/Verduras",
+                "/Animales",
                 "/Cosas de la casa",
                 "/Formas",
               ].map((path, index) => (
