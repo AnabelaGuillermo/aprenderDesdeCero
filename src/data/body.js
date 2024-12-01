@@ -23,6 +23,6 @@ export const bodyView = {
     { name: "Piernas", image: "/body/piernas.jpg" },
     { name: "Rodilla", image: "/body/rodilla.jpg" },
     { name: "Tobillo", image: "/body/tobillo.jpg" },
-    { name: "Uñas", image: "/body/uñas.jpg" },
+    { name: "Uña", image: "/body/uña.jpg" },
   ],
 };
