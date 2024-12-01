@@ -14,8 +14,12 @@ const ColorButtons = () => {
       <Link to="/Colores" className="btn purple-btn">Colores</Link>
       <Link to="/Frutas" className="btn red-btn">Frutas</Link>
       <Link to="/Verduras" className="btn green-btn">Verduras</Link>
-      <Link to="/Cosas de la casa" className="btn blue-btn">Cosas de la casa</Link>
-      <Link to="/Formas" className="btn orange-btn">Formas</Link>
+      <Link to="/Comidas y bebidas" className="btn orange-btn">Comidas y bebidas</Link>
+      <Link to="/Animales" className="btn lightblue-btn">Animales</Link>
+      <Link to="/Cosas de la casa" className="btn purple-btn">Cosas de la casa</Link>
+      <Link to="/Partes del cuerpo" className="btn red-btn">Partes del cuerpo</Link>
+      <Link to="/Formas" className="btn green-btn">Formas</Link>
+      <Link to="/Emociones" className="btn orange-btn">Emociones</Link>
     </article>
   );
 };
