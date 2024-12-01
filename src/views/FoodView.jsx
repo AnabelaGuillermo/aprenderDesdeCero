@@ -15,10 +15,10 @@ function FoodView() {
       </p>
       <article>
         <Dropdown
-          title="Desayuno/Merienda ↓"
+          title="Desayuno / Merienda ↓"
           items={foodView.DesayunoMerienda}
         />
-        <Dropdown title="Almuerzo/Cena ↓" items={foodView.AlmuerzoCena} />
+        <Dropdown title="Almuerzo / Cena ↓" items={foodView.AlmuerzoCena} />
         <Dropdown title="Bebidas ↓" items={foodView.Bebidas} />
         <Dropdown title="Postres ↓" items={foodView.Postres} />
         <Dropdown title="Agregados ↓" items={foodView.Agregados} />

@@ -79,7 +79,7 @@ export const router = createBrowserRouter([
         element: <EmotionsView />,
       },
       {
-        path: "Comidas",
+        path: "Comidas y bebidas",
         element: <FoodView />,
       },
       {
