@@ -44,3 +44,7 @@ body,
   background-color: #ccc !important;
   cursor: not-allowed;
 }
+
+.nav-link {
+  text-align: center;
+}

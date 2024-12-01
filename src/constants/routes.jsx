@@ -15,6 +15,7 @@ import ShapesView from "../views/ShapesView";
 import AnimalsView from "../views/AnimalsView";
 import BodyView from "../views/BodyView";
 import EmotionsView from "../views/EmotionsView";
+import FoodView from "../views/FoodView";
 
 export const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
       {
         path: "Emociones",
         element: <EmotionsView />,
+      },
+      {
+        path: "Comidas y bebidas",
+        element: <FoodView />,
       },
       {
         path: "*",
