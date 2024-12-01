@@ -13,6 +13,7 @@ import VegetablesView from "../views/VegetablesView";
 import FruitView from "../views/FruitView";
 import ShapesView from "../views/ShapesView";
 import AnimalsView from "../views/AnimalsView";
+import BodyView from "../views/BodyView";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "Cosas de la casa",
         element: <HomeStuffView />,
+      },
+      {
+        path: "Partes del cuerpo",
+        element: <BodyView />,
       },
       {
         path: "Sílabas",
