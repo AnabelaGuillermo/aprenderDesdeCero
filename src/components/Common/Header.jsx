@@ -45,6 +45,7 @@ const Header = () => {
                 "/Colores",
                 "/Frutas",
                 "/Verduras",
+                "/Comidas",
                 "/Animales",
                 "/Cosas de la casa",
                 "/Partes del cuerpo",
