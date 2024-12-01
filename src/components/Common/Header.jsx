@@ -47,6 +47,7 @@ const Header = () => {
                 "/Verduras",
                 "/Animales",
                 "/Cosas de la casa",
+                "/Partes del cuerpo",
                 "/Formas",
               ].map((path, index) => (
                 <li className="nav-item" key={index}>
