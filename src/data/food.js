@@ -81,6 +81,7 @@ export const foodView = {
   ],
   Agregados: [
     { name: "Azúcar", image: "/food/agregados/azucar.jpg" },
+    { name: "Edulcorante", image: "/food/agregados/edulcorante.jpg" },
     { name: "Ketchup", image: "/food/agregados/ketchup.jpg" },
     { name: "Mayonesa", image: "/food/agregados/mayonesa.jpg" },
     { name: "Sal", image: "/food/agregados/sal.jpg" },
