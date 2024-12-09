@@ -122,7 +122,11 @@ const AdditionView = () => {
         Ingresa dos números, haz clic en iniciar suma y luego en siguiente paso
         para aprender a sumar.
       </p>
-      <SumInput onStartSum={startSum} highlightIndex={highlightIndex} />
+      <SumInput
+        onStartSum={startSum}
+        highlightIndex={highlightIndex}
+        sum={finalResult}
+      />
       {steps.length > 0 && (
         <>
           <SumStep {...steps[currentStep]} />

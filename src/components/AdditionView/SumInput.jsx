@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SumInput = ({ onStartSum, highlightIndex }) => {
+const SumInput = ({ onStartSum, highlightIndex, sum }) => {
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
 
@@ -29,9 +29,6 @@ const SumInput = ({ onStartSum, highlightIndex }) => {
     <form className="form-addition" onSubmit={handleSubmit}>
       <div className="addition">
         <label>Número 1:</label>
-        <div className="number-addition">
-          {getHighlightedNumber(number1, highlightIndex)}
-        </div>
         <input
           type="number"
           value={number1}
@@ -41,9 +38,6 @@ const SumInput = ({ onStartSum, highlightIndex }) => {
       </div>
       <div>
         <label>Número 2:</label>
-        <div className="number-addition">
-          {getHighlightedNumber(number2, highlightIndex)}
-        </div>
         <input
           type="number"
           value={number2}
@@ -51,7 +45,21 @@ const SumInput = ({ onStartSum, highlightIndex }) => {
           placeholder="Número 2"
         />
       </div>
-      <button className="button-orange" type="submit">Iniciar suma</button>
+      <button className="button-orange" type="submit">
+        Iniciar suma
+      </button>
+      <div className="number-addition">
+        {getHighlightedNumber(number1, highlightIndex)}
+      </div>
+      <div className="number-addition">
+        {getHighlightedNumber(number2, highlightIndex)}
+      </div>
+      {sum !== null && (
+        <div className="number-addition result">
+          <hr />
+          <strong>{sum}</strong>
+        </div>
+      )}
     </form>
   );
 };
