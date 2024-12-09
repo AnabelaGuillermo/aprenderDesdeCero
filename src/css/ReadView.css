@@ -1,0 +1,42 @@
+.stories {
+  & button {
+    width: 120px;
+  }
+}
+
+.button-stories {
+  display: flex;
+  justify-content: center;
+
+  & button {
+    margin: 0px 5px 0px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.reproducir {
+  background-color: #08aec4;
+}
+
+.reproducir:hover {
+  background-color: #098b9c;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.stop-button.active {
+  background-color: rgb(238, 173, 52);
+  color: white;
+}
+
+.highlighted {
+  background-color: yellow;
+}
+
+.normal {
+  background-color: transparent;
+}

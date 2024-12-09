@@ -1,0 +1,35 @@
+.portadaHome {
+  text-align: center;
+
+  & img {
+    height: 100px;
+  }
+}
+
+.tituloHome {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  animation: colorChange 3s infinite;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+  font-size: 80px;
+  text-align: center;
+  font-weight: 700;
+}
+
+@keyframes colorChange {
+  0% {
+    color: red;
+  }
+  25% {
+    color: yellow;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: blue;
+  }
+  100% {
+    color: purple;
+  }
+}

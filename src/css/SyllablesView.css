@@ -1,0 +1,54 @@
+.button-syllable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #08aec4;
+  color: white;
+}
+
+.button-syllable:hover {
+  background-color: #098b9c;
+}
+
+.syllable {
+  & input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px 7px 7px 15px;
+    margin-top: 10px;
+  }
+}
+
+.bi-play-fill {
+  font-size: 25px;
+  border: rgb(128, 128, 128) solid 1px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #08aec4;
+  color: white;
+}
+
+.silabas,
+.palabra {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.syllables-divide {
+  font-size: 20px;
+}
+
+.syllable {
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.syllable.highlighted {
+  background-color: yellow;
+  color: black;
+  border-radius: 3px;
+}

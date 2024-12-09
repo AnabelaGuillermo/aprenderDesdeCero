@@ -1,0 +1,37 @@
+.colors {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.color-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.color-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: 1px solid black;
+}
+
+.color-square p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+  text-shadow: 1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white,
+    -1px 1px 0 white;
+}
+
+.color-square:hover {
+  transform: scale(1.1);
+}

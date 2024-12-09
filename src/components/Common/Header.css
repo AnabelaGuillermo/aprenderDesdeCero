@@ -1,0 +1,21 @@
+.logoHeader {
+  height: 60px;
+}
+
+header {
+
+  z-index: 1000;
+
+  & nav {
+    background-color: rgb(238, 173, 52);
+  }
+}
+
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link.active {
+  text-decoration: underline white;
+  color: white !important;
+}
