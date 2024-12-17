@@ -109,6 +109,16 @@ button:hover {
   background-color: #bbb;
 }
 
+.highlighted-word {
+  cursor: pointer;
+  margin-right: 2px;
+  padding: 3px;
+}
+
+.highlighted-word.highlighted {
+  background-color: yellow;
+}
+
 @media (max-width: 768px) {
   button {
     width: 45px;
