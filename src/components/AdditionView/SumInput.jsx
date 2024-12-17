@@ -27,8 +27,8 @@ const SumInput = ({ onStartSum, highlightIndex, sum }) => {
 
   return (
     <form className="form-addition" onSubmit={handleSubmit}>
-      <div className="addition">
-        <label>Número 1:</label>
+      <div className="addition mb-3">
+        <label className="me-3">Número 1:</label>
         <input
           type="number"
           value={number1}
@@ -36,8 +36,8 @@ const SumInput = ({ onStartSum, highlightIndex, sum }) => {
           placeholder="Número 1"
         />
       </div>
-      <div>
-        <label>Número 2:</label>
+      <div className="mb-3">
+        <label className="me-3">Número 2:</label>
         <input
           type="number"
           value={number2}
@@ -45,18 +45,19 @@ const SumInput = ({ onStartSum, highlightIndex, sum }) => {
           placeholder="Número 2"
         />
       </div>
-      <button className="button-orange" type="submit">
+      <button className="button-orange btn-sum mb-3" type="submit">
         Iniciar suma
       </button>
       <div className="number-addition">
+        {number1 && number2 && "+"}{" "}
         {getHighlightedNumber(number1, highlightIndex)}
       </div>
       <div className="number-addition">
         {getHighlightedNumber(number2, highlightIndex)}
       </div>
       {sum !== null && (
-        <div className="number-addition result">
-          <hr />
+        <div className="number-addition result mb-4">
+          <div className="line">—————</div>
           <strong>{sum}</strong>
         </div>
       )}

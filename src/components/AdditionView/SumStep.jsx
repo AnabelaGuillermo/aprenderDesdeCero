@@ -11,7 +11,6 @@ const SumStep = ({ step, n1, n2, partialSum, carry }) => {
         <span className="highlight">{n2}</span> ={" "}
         <span className="highlight">{partialSum}</span>
       </p>
-      {carry > 0 && <p>Carry: {carry}</p>}
     </div>
   );
 };
