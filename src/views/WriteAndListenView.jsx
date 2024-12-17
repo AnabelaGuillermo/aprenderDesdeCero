@@ -7,46 +7,7 @@ const VirtualKeyboard = () => {
   const [text, setText] = useState("");
   const [cursorPosition, setCursorPosition] = useState(null);
   const [playbackRate, setPlaybackRate] = useState(1);
-
-  const handleAddChar = (char) => {
-    const position = cursorPosition !== null ? cursorPosition : text.length;
-    const newText =
-      text.slice(0, position) +
-      (char === "Espacio" ? " " : char) +
-      text.slice(position);
-    setText(newText);
-    setCursorPosition(position + 1);
-  };
-
-  const handleDelete = () => {
-    if (cursorPosition > 0) {
-      const newText =
-        text.slice(0, cursorPosition - 1) + text.slice(cursorPosition);
-      setText(newText);
-      setCursorPosition(cursorPosition - 1);
-    }
-  };
-
-  const handleClearText = () => {
-    setText("");
-    setCursorPosition(null);
-  };
-
-  const handlePlayText = () => {
-    if (text) {
-      window.speechSynthesis.cancel();
-
-      const speech = new SpeechSynthesisUtterance(text);
-      speech.lang = "es-ES";
-      speech.volume = 1;
-      speech.pitch = 1;
-      speech.rate = playbackRate;
-
-      setTimeout(() => {
-        window.speechSynthesis.speak(speech);
-      }, 100);
-    }
-  };
+  const [highlightedWord, setHighlightedWord] = useState(null);
 
   const handleTextChange = (e) => {
     setText(e.target.value);
@@ -55,6 +16,32 @@ const VirtualKeyboard = () => {
 
   const handleCursorChange = (e) => {
     setCursorPosition(e.target.selectionStart);
+  };
+
+  const handleWordClick = (word) => {
+    setHighlightedWord(word);
+
+    const speech = new SpeechSynthesisUtterance(word);
+    speech.lang = "es-ES";
+    speech.rate = playbackRate;
+    speech.volume = 1;
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+  };
+
+  const renderTextAsWords = () => {
+    return text.split(" ").map((word, index) => (
+      <span
+        key={index}
+        onClick={() => handleWordClick(word)}
+        className={`highlighted-word ${
+          word === highlightedWord ? "highlighted" : ""
+        }`}
+      >
+        {word}
+      </span>
+    ));
   };
 
   return (
@@ -69,20 +56,19 @@ const VirtualKeyboard = () => {
           placeholder="Tu frase aquí..."
         />
       </article>
-
+      <article className="interactive-text">
+        <p>{renderTextAsWords()}</p>
+      </article>
       <article className="controls">
-        <button onClick={handlePlayText} disabled={text.length === 0}>
-          Reproducir
-        </button>
+        <button disabled={text.length === 0}>Reproducir</button>
         <button
-          onClick={handleClearText}
+          onClick={() => setText("")}
           disabled={text.length === 0}
           className="button-orange"
         >
           Borrar todo
         </button>
       </article>
-
       <article className="playback-controls mt-3">
         <button
           onClick={() => setPlaybackRate(1)}
