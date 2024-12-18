@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ColorButtons from "../components/HomeView/ColorButtons";
-
 import "../css/WriteAndListenView.css";
 
 const VirtualKeyboard = () => {
@@ -22,6 +21,16 @@ const VirtualKeyboard = () => {
     setHighlightedWord(word);
 
     const speech = new SpeechSynthesisUtterance(word);
+    speech.lang = "es-ES";
+    speech.rate = playbackRate;
+    speech.volume = 1;
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+  };
+
+  const handlePlayClick = () => {
+    const speech = new SpeechSynthesisUtterance(text);
     speech.lang = "es-ES";
     speech.rate = playbackRate;
     speech.volume = 1;
@@ -60,7 +69,9 @@ const VirtualKeyboard = () => {
         <p>{renderTextAsWords()}</p>
       </article>
       <article className="controls">
-        <button disabled={text.length === 0}>Reproducir</button>
+        <button onClick={handlePlayClick} disabled={text.length === 0}>
+          Reproducir
+        </button>
         <button
           onClick={() => setText("")}
           disabled={text.length === 0}
