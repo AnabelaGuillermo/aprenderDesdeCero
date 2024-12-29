@@ -53,7 +53,7 @@ const AdditionView = () => {
     setCarryFlag(false);
   };
 
-  const speakStep = (step) => {
+  const speakStep = (step, isLastStep) => {
     const { n1, n2, partialSum, carry } = step;
     let message = "";
 
@@ -62,11 +62,11 @@ const AdditionView = () => {
       setCarryFlag(false);
     } else {
       message = `${n1} más ${n2}, igual a ${partialSum}`;
-      if (carry > 0 && !carrySpoken) {
-        message += ", me llevo uno";
-        setCarrySpoken(true);
-        setCarryFlag(true);
-      }
+    }
+
+    if (carry > 0 && !isLastStep) {
+      message += ", me llevo uno";
+      setCarryFlag(true);
     }
 
     window.speechSynthesis.cancel();
@@ -80,7 +80,7 @@ const AdditionView = () => {
       const next = currentStep + 1;
       setCurrentStep(next);
       setHighlightIndex(next);
-      speakStep(steps[next]);
+      speakStep(steps[next], next === steps.length - 1);
     } else if (currentStep === steps.length - 1) {
       const utterance = new SpeechSynthesisUtterance(
         `El resultado final es ${finalResult}`
