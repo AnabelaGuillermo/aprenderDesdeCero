@@ -45,9 +45,11 @@ const SumInput = ({ onStartSum, highlightIndex, sum }) => {
           placeholder="Número 2"
         />
       </div>
-      <button className="button-orange btn-sum mb-3" type="submit">
-        Iniciar suma
-      </button>
+      <div className="d-flex justify-content-center">
+        <button className="button-orange btn-sum mb-3" type="submit">
+          Iniciar suma
+        </button>
+      </div>
       <div className="number-addition">
         {number1 && number2 && "+"}{" "}
         {getHighlightedNumber(number1, highlightIndex)}

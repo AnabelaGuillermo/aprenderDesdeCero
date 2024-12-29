@@ -21,4 +21,10 @@
   width: 140px;
   border: none;
   border-radius: 5px;
+  background-color: #08aec4;
+  color: white;
+}
+
+.next-step:hover {
+  background-color: #098b9c;
 }

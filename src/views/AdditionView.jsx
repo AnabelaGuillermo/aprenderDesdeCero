@@ -111,9 +111,11 @@ const AdditionView = () => {
       {steps.length > 0 && (
         <>
           <SumStep {...steps[currentStep]} />
-          <button className="next-step" onClick={nextStep}>
-            Siguiente paso
-          </button>
+          <div className="d-flex justify-content-center">
+            <button className="next-step" onClick={nextStep}>
+              Siguiente paso
+            </button>
+          </div>
         </>
       )}
       <Result sum={finalResult} />
