@@ -17,6 +17,7 @@ import BodyView from "../views/BodyView";
 import EmotionsView from "../views/EmotionsView";
 import FoodView from "../views/FoodView";
 import AdditionView from "../views/AdditionView";
+import SubtractionView from "../views/SubtractionView";
 
 export const router = createBrowserRouter([
   {
@@ -86,6 +87,10 @@ export const router = createBrowserRouter([
       {
         path: "Suma",
         element: <AdditionView />,
+      },
+      {
+        path: "Resta",
+        element: <SubtractionView />,
       },
       {
         path: "*",
